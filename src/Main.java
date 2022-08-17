@@ -45,6 +45,12 @@ public class Main {
         }
         System.out.println("Среднее значение трат за месяц равно " + (sum2/30) + " рублей");
 
-
+        char[] reverseFullName = { 'n', 'a', 'v', 'I', ' ', 'v', 'o', 'n', 'a', 'v', 'I'};
+        char[] trueName = new char[reverseFullName.length];
+        for (char i = 0; i < reverseFullName.length; i++) {
+            trueName[reverseFullName.length - 1 - i] = reverseFullName[i];
+        }
+        reverseFullName = trueName;
+        System.out.println(trueName);
     }
 }
