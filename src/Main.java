@@ -1,19 +1,50 @@
-public class Main {
-    public static void main(String[] args) {
-        /* int[] arr = {1, 2, 3, 4, 5};
-        for (int i : arr) {
-            System.out.print(i + " ");
-        }
-        System.out.println();
+import java.util.Arrays;
 
-        char[][] gameField = new char[3][3];
-        for (int i = 0; i < gameField.length; i++) {
-            for (int j = 0; j < gameField[0].length; j++) {
-                System.out.print(gameField[i][j] + " ");
-            }
-            System.out.println();
-        } */
-        // задача 1
+public class Main {
+
+    int[] arr = generateRandomArray();
+
+    public static int[] generateRandomArray() {
+        java.util.Random random = new java.util.Random();
+        int[] arr = new int[30];
+        for (int i = 0; i < arr.length; i++) {
+            arr[i] = random.nextInt(100_000) + 100_000;
+        }
+        return arr;
+    }
+
+    public static void main(String[] args) {
+
+        System.out.println(Arrays.toString(generateRandomArray()));
+
+        int[] arrayNew = generateRandomArray();
+        int sum = 0;
+        for (int i = 0; i < arrayNew.length; i++) {
+            sum = sum + arrayNew[i];
+        }
+            System.out.println("Сумма равна " + sum + " рублей");
+        // задача 2
+        int[] spending = generateRandomArray();
+        int min = spending[0];
+        int max = spending[0];
+        for (int j : spending){
+            if(j > max)
+            max = j;
+            if(j < min)
+            min = j;
+        }
+        System.out.println("Максимальная сумма трат за день " + max + " рублей");
+        System.out.println("Минимальная сумма трат за день " + min + " рублей");
+
+        // задание 3
+        int[] mean = generateRandomArray();
+        float sum2 = 0f;
+        for (int a = 0; a < mean.length; a++) {
+            sum2 = sum2 + mean[a];
+            //float month = 30f;
+        }
+        System.out.println("Среднее значение трат за месяц равно " + (sum2/30) + " рублей");
+
 
     }
 }
